@@ -1,0 +1,55 @@
+# WLog: Workout Tracker & Gym Log
+
+> WLog is a workout tracker and gym log app for iOS and Android, built for lifters who want fast, distraction-free logging and clear progress tracking.
+
+## Key Facts
+- Available on: iOS (App Store) and Android (Google Play)
+- Price: Free with optional premium features
+- Developer: Independent developer
+- Contact: wlog.training@gmail.com
+- App Store ID: 1567930312
+- Bundle ID: com.mdikcinar.workoutplanner
+- Rating: 4.7/5
+
+## Core Features
+- AI-powered workout import: scan photos, PDFs, or spreadsheets to create routines automatically
+- Automatic progressive overload: custom weight increments per exercise, applied after each successful session
+- Linked sets: ratio-based weight sync between warm-up and work sets
+- Full set tracking: weight, reps, sets, RPE, RIR, rest timer, supersets, drop sets, failure sets
+- Plate calculator: see exact plates to load for any barbell weight
+- Personal records: track 1RM, best set volume, session volume, with strength level (Beginner to Advanced)
+- Body measurements: weight, body fat, arms, chest, waist — with charts over time
+- Custom workouts: build any routine, support for 5x5, PPL, powerlifting, hypertrophy, bodyweight
+- Apple Watch companion: start workouts, log sets, track rest from your wrist
+- Cloud backup and cross-device sync
+
+## Supported Languages
+English, German, French, Spanish, Portuguese, Italian, Dutch, Polish, Danish, Russian, Turkish, Japanese, Korean, Hindi, Chinese (Simplified)
+
+## Privacy & Data Handling
+- WLog does not sell personal data and does not share workout or health data with advertisers or data brokers.
+- The app contains no third-party advertising.
+- An account is optional: workouts are stored on-device, and sync to a private cloud backup only when signed in.
+- Health data (Apple Health / Health Connect) is opt-in and is never used for advertising or marketing.
+- Accounts and all cloud data can be deleted in-app: Settings > scroll to bottom > Delete account.
+- Subscriptions are billed by Apple or Google and must be cancelled in the respective store account.
+- Full policy: https://wlog-workout-tracker.github.io/en/privacy/
+
+## Health & Safety Notice
+WLog is not a medical device and does not provide medical advice. Suggested weight increases are derived
+solely from logged numbers and cannot account for fatigue, technique or readiness. Users should consult a
+physician before starting an exercise program.
+
+## Links
+- Website: https://wlog-workout-tracker.github.io
+- iOS App Store: https://apps.apple.com/app/id1567930312
+- Android Google Play: https://play.google.com/store/apps/details?id=com.mdikcinar.workoutplanner
+- Contact: wlog.training@gmail.com
+
+## Sitemap
+- /{locale}/            — App overview, features summary, FAQ, download links (21 locales)
+- /en/privacy/        — Privacy Policy (English only)
+- /en/terms/          — Terms of Service, health disclaimer, subscription terms (English only)
+- /en/support/        — Help center and FAQ: sync, Apple Watch, AI import, billing (English only)
+- /en/delete-account/ — Account and data deletion instructions (English only)
+- Locales available for the landing page: en, en-au, en-ca, en-gb, da, de, es, es-mx, fr, fr-ca, hi, it, ja, ko, nl, pl, pt-br, pt, ru, tr, zh

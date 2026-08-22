@@ -1,0 +1,193 @@
+<!DOCTYPE html><html lang="en" data-theme="light"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Privacy Policy — WLog Workout Tracker</title><meta name="description" content="How WLog collects, uses, stores and deletes your data. WLog never sells your personal data and never shares your workout or health data with advertisers."><link rel="canonical" href="https://wlog-workout-tracker.github.io/en/privacy/"><link rel="icon" type="image/png" href="/app-icon.png"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:title" content="Privacy Policy — WLog Workout Tracker"><meta property="og:description" content="How WLog collects, uses, stores and deletes your data. WLog never sells your personal data and never shares your workout or health data with advertisers."><meta property="og:image" content="https://wlog-workout-tracker.github.io/og-image.png"><meta property="og:url" content="https://wlog-workout-tracker.github.io/en/privacy/"><meta property="og:locale" content="en_US"><meta name="twitter:card" content="summary_large_image"><!-- Hreflang: all locales + x-default --><!-- Theme: prevent flash --><script>
+      (function() {
+        // `?theme=` lets the app's in-app WebView force its own theme: WKWebView
+        // reports the OS appearance, not the app's dark-mode setting, so without
+        // this a dark app opens a light page. Persisted so in-page navigation keeps it.
+        var forced = new URLSearchParams(window.location.search).get('theme');
+        if (forced !== 'dark' && forced !== 'light') forced = null;
+        if (forced) { try { localStorage.setItem('theme', forced); } catch (e) {} }
+        var t = forced || localStorage.getItem('theme');
+        if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script><!-- JSON-LD slot --><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Privacy Policy — WLog Workout Tracker","description":"How WLog collects, uses, stores and deletes your data. WLog never sells your personal data and never shares your workout or health data with advertisers.","url":"https://wlog-workout-tracker.github.io/en/privacy/","dateModified":"2026-08-02","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"WLog","url":"https://wlog-workout-tracker.github.io/en/"},"publisher":{"@type":"Organization","name":"WLog","email":"wlog.training@gmail.com","url":"https://wlog-workout-tracker.github.io/en/"}}</script><link rel="stylesheet" href="/_astro/delete-account.DPSXs_BL.css"></head> <body> <header class="site-header" id="site-header"> <div class="container"> <a href="/en/" class="logo"> <img src="/app-icon.png" alt="WLog" width="32" height="32"> <span class="logo__text">WLog</span> </a> <nav id="site-nav" class="site-nav"> <a href="/en/#features" class="nav-link">Features</a> <a href="/en/#faq" class="nav-link">FAQ</a> <a href="/en/#download" class="nav-link nav-link--cta">Download Now</a> <select class="lang-select" aria-label="Language"> <option value="en" selected>English</option><option value="en-au">English (AU)</option><option value="en-ca">English (CA)</option><option value="en-gb">English (GB)</option><option value="da">Dansk</option><option value="de">Deutsch</option><option value="es">Espanol</option><option value="es-mx">Espanol (MX)</option><option value="fr">Francais</option><option value="fr-ca">Francais (CA)</option><option value="hi">Hindi</option><option value="it">Italiano</option><option value="ja">Japanese</option><option value="ko">Korean</option><option value="nl">Nederlands</option><option value="pl">Polski</option><option value="pt-br">Portugues (BR)</option><option value="pt">Portugues</option><option value="ru">Russian</option><option value="tr">Turkce</option><option value="zh">Chinese</option> </select> </nav> <div class="header-actions"> <button class="theme-toggle" aria-label="Toggle theme" type="button" id="theme-toggle"> <span class="theme-icon-light">&#9790;</span> <span class="theme-icon-dark" style="display:none">&#9728;&#65039;</span> </button> <button class="nav-toggle" type="button" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"> <span class="nav-toggle__bars" aria-hidden="true"></span> </button> </div> </div> </header> <script>
+  // Sticky header background on scroll
+  var header = document.getElementById('site-header');
+  function onScroll() {
+    if (window.scrollY > 20) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Mobile nav toggle
+  var navToggle = document.getElementById('nav-toggle');
+  function setNavOpen(open) {
+    header.classList.toggle('nav-open', open);
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  navToggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    setNavOpen(!header.classList.contains('nav-open'));
+  });
+  document.getElementById('site-nav').addEventListener('click', function(e) {
+    if (e.target.closest('a')) setNavOpen(false);
+  });
+  document.addEventListener('click', function(e) {
+    if (header.classList.contains('nav-open') && !header.contains(e.target)) setNavOpen(false);
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') setNavOpen(false);
+  });
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 767) setNavOpen(false);
+  });
+
+  // Language switcher
+  document.querySelector('.lang-select').addEventListener('change', function(e) {
+    window.location.href = '/' + e.target.value + '/';
+  });
+
+  // Theme toggle
+  document.getElementById('theme-toggle').addEventListener('click', function() {
+    var html = document.documentElement;
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    var next = isDark ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    updateThemeIcons(next);
+  });
+
+  function updateThemeIcons(theme) {
+    var light = document.querySelector('.theme-icon-light');
+    var dark = document.querySelector('.theme-icon-dark');
+    if (light) light.style.display = theme === 'dark' ? 'none' : '';
+    if (dark) dark.style.display = theme === 'dark' ? '' : 'none';
+  }
+  updateThemeIcons(document.documentElement.getAttribute('data-theme') || 'light');
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Scroll-reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    var reveals = document.querySelectorAll('.reveal');
+    if (reveals.length > 0 && 'IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(function(el) { obs.observe(el); });
+    }
+  });
+</script> <main>    <article class="legal"> <div class="container legal__container"> <header class="legal__header"> <span class="section-label">Legal</span> <h1>Privacy Policy</h1> <p class="legal__lede">WLog is a workout tracker built so you can log training without handing over your life. This page explains exactly what we collect, why, and how to get rid of it.</p> <p class="legal__updated">
+Last updated <time datetime="2026-08-02">August 2, 2026</time> </p> </header> <div class="legal__body"> <nav class="legal__toc" aria-label="On this page"> <h2 class="legal__toc-title">On this page</h2> <ol> <li><a href="#summary">Summary</a></li><li><a href="#who-we-are">Who we are</a></li><li><a href="#what-we-collect">What we collect</a></li><li><a href="#how-we-use">How we use it</a></li><li><a href="#legal-bases">Legal bases</a></li><li><a href="#processors">Service providers</a></li><li><a href="#health-data">Health data</a></li><li><a href="#ai-import">AI plan import</a></li><li><a href="#retention">Data retention</a></li><li><a href="#your-rights">Your rights</a></li><li><a href="#deletion">Deleting your data</a></li><li><a href="#children">Children&#39;s privacy</a></li><li><a href="#security">Security</a></li><li><a href="#transfers">International transfers</a></li><li><a href="#changes">Changes</a></li><li><a href="#contact">Contact</a></li> </ol> </nav> <div class="legal__content">  <section id="summary"> <h2>Summary</h2> <div class="legal-callout"> <span class="legal-callout__icon" aria-hidden="true"> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> </span> <p> <strong>We do not sell your personal data, and we never share your workout or health data with
+        advertisers or data brokers.</strong> You can use WLog without an account. If you create one, you
+        can delete it — and everything in it — from inside the app at any time.
+</p> </div> <p>The short version:</p> <ul> <li>Your workouts are stored <strong>on your device</strong> by default.</li> <li>If you sign in, they are also backed up to your private cloud account so you can sync across devices.</li> <li>We collect anonymous usage and crash data to fix bugs and decide what to build next.</li> <li>Health data from Apple Health or Health Connect stays between your device and your own cloud backup. It is never used for advertising.</li> <li>Purchases are handled by Apple and Google. We never see your card details.</li> </ul> </section> <section id="who-we-are"> <h2>Who we are</h2> <p>
+WLog ("WLog", "we", "us") is a workout tracker and gym log application for iOS, Android and Apple Watch,
+      developed and operated by Mustafa Ali Dikçinar as an independent developer. For privacy law purposes we
+      are the <strong>data controller</strong> for the personal data described on this page.
+</p> <p>
+This policy covers the WLog mobile apps, the Apple Watch companion app, and this website. It applies from
+      the date shown above and replaces any earlier privacy policy published for this app.
+</p> </section> <section id="what-we-collect"> <h2>What we collect</h2> <p>
+We only collect what the app needs to work. The table below lists every category of data, why we handle
+      it, and whether it ever leaves your device.
+</p> <div class="legal-table-wrap"> <table class="legal-table"> <thead> <tr> <th scope="col">Data</th> <th scope="col">Why</th> <th scope="col">Leaves your device?</th> </tr> </thead> <tbody> <tr> <th scope="row">Training data</th> <td>Workouts, exercises, sets, reps, weights, rest times, RPE/RIR, notes and personal records — the core of the app.</td> <td>Only if you sign in for cloud backup and sync.</td> </tr> <tr> <th scope="row">Body measurements</th> <td>Optional body weight, body fat and circumference entries used for your progress charts.</td> <td>Only if you sign in for cloud backup and sync.</td> </tr> <tr> <th scope="row">Profile basics</th> <td>Optional height, weight, sex, birth year and unit preferences, used to calculate strength levels and 1RM estimates.</td> <td>Only if you sign in for cloud backup and sync.</td> </tr> <tr> <th scope="row">Account identifiers</th> <td>Your email address and a user ID, created when you sign in with Apple, Google or as a guest.</td> <td>Yes — stored with our authentication provider.</td> </tr> <tr> <th scope="row">Usage analytics</th> <td>Which screens are opened and which features are used, in aggregate, so we know what to improve.</td> <td>Yes — pseudonymous, tied to an app instance ID rather than your name.</td> </tr> <tr> <th scope="row">Crash diagnostics</th> <td>Stack traces, device model, OS version and app version when the app crashes or errors.</td> <td>Yes — so we can fix the crash.</td> </tr> <tr> <th scope="row">Purchase status</th> <td>Whether you hold an active subscription, so premium features unlock on all your devices.</td> <td>Yes — handled by our subscription provider. We never receive your payment card details.</td> </tr> <tr> <th scope="row">Photos and files</th> <td>Only the specific image, PDF or spreadsheet you pick when importing a workout plan.</td> <td>Sent for processing only at the moment you import. See <a href="#ai-import">AI plan import</a>.</td> </tr> <tr> <th scope="row">Health data</th> <td>Optional workout and body metrics exchanged with Apple Health or Health Connect.</td> <td>Not to us as a separate copy. See <a href="#health-data">Health data</a>.</td> </tr> <tr> <th scope="row">Support messages</th> <td>Anything you write when you send feedback or contact support, plus basic device context.</td> <td>Yes — so we can reply and reproduce the problem.</td> </tr> </tbody> </table> </div> <p> <strong>We do not collect</strong> your precise location, your contacts, your calendar, your browsing
+      history outside the app, or your advertising identifier. WLog does not display third-party ads.
+</p> </section> <section id="how-we-use"> <h2>How we use it</h2> <p>We use the data above to:</p> <ul> <li>Provide the core product — store your training history and show your progress over time.</li> <li>Sync your data between your phone, your Apple Watch and any other device you sign in on.</li> <li>Unlock premium features for subscribers and restore purchases.</li> <li>Send workout reminders and rest-timer notifications, if you enable them.</li> <li>Diagnose crashes and fix bugs.</li> <li>Understand which features are used so we can prioritise development.</li> <li>Respond when you contact support.</li> <li>Detect abuse and protect the service from automated attacks.</li> </ul> <p>
+We do <strong>not</strong> use your data for profiling that produces legal effects, automated
+      decision-making about you, targeted advertising, or resale of any kind.
+</p> </section> <section id="legal-bases"> <h2>Legal bases</h2> <p>
+If you are in the European Economic Area or the United Kingdom, we rely on the following legal bases under
+      the GDPR:
+</p> <ul> <li><strong>Performance of a contract</strong> — providing the app, your account, cloud sync and subscriptions.</li> <li><strong>Consent</strong> — health data access, notifications, camera and photo access, and optional analytics where consent is required. You can withdraw consent at any time in your device settings.</li> <li><strong>Legitimate interests</strong> — crash reporting, security, abuse prevention, and understanding aggregate feature usage to improve the product.</li> <li><strong>Legal obligation</strong> — retaining transaction records where tax or consumer law requires it.</li> </ul> </section> <section id="processors"> <h2>Service providers</h2> <p>
+We use a small number of established providers to run the app. They process data on our instructions and
+      are not permitted to use it for their own purposes.
+</p> <div class="legal-table-wrap"> <table class="legal-table"> <thead> <tr> <th scope="col">Provider</th> <th scope="col">Purpose</th> <th scope="col">Privacy policy</th> </tr> </thead> <tbody> <tr> <th scope="row">Google Firebase</th> <td>Authentication, cloud database and backup, analytics, crash reporting, remote configuration and abuse protection.</td> <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">firebase.google.com</a></td> </tr> <tr> <th scope="row">RevenueCat</th> <td>Subscription and entitlement management across platforms.</td> <td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">revenuecat.com</a></td> </tr> <tr> <th scope="row">Apple</th> <td>App distribution, Sign in with Apple, App Store purchases and HealthKit.</td> <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">apple.com</a></td> </tr> <tr> <th scope="row">Google Play</th> <td>App distribution, Google Sign-In, Play purchases and Health Connect.</td> <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com</a></td> </tr> <tr> <th scope="row">Wiredash</th> <td>In-app feedback and support messages you choose to send.</td> <td><a href="https://wiredash.com/privacy" target="_blank" rel="noopener noreferrer">wiredash.com</a></td> </tr> </tbody> </table> </div> <p>
+We may also disclose data if we are legally required to do so, or to establish, exercise or defend legal
+      claims. If WLog is ever transferred to another owner, your data may transfer with it — you will be
+      notified before that happens and before any different privacy policy applies to you.
+</p> </section> <section id="health-data"> <h2>Health data</h2> <p>
+WLog can integrate with <strong>Apple Health</strong> (HealthKit) on iOS and <strong>Health Connect</strong>
+on Android. This integration is entirely optional and off until you grant permission.
+</p> <ul> <li>We read and write only the data types you approve, such as workouts, active energy and body measurements.</li> <li>Health data is used solely to show your progress in the app and to record your WLog sessions in your platform's health store.</li> <li>We <strong>never</strong> use health data for advertising or marketing, and we never sell or share it with data brokers.</li> <li>Health data is not used for any purpose other than the health and fitness features you see in the app.</li> <li>You can revoke access at any time in the Health app (iOS) or Health Connect settings (Android) without losing your WLog training history.</li> </ul> </section> <section id="ai-import"> <h2>AI plan import</h2> <p>
+WLog can turn a photo, screenshot, PDF or spreadsheet of a training program into a structured routine.
+      When you use this feature:
+</p> <ul> <li>Only the file you explicitly select is sent for processing — we do not scan your photo library.</li> <li>The file is processed by Google's generative AI service through Firebase in order to extract exercises, sets and reps.</li> <li>The extracted routine is saved to your account. We do not keep the source file after the import completes.</li> <li>Your imports are not used to train third-party foundation models.</li> </ul> <p>
+Automated extraction is not perfect. Always review an imported routine before training with it.
+</p> </section> <section id="retention"> <h2>Data retention</h2> <ul> <li><strong>Training and account data</strong> — kept while your account is active, and erased when you delete your account.</li> <li><strong>Local data</strong> — kept on your device until you delete it in the app or uninstall the app.</li> <li><strong>Crash reports</strong> — retained for up to 90 days.</li> <li><strong>Analytics</strong> — retained in aggregated, pseudonymous form for up to 14 months.</li> <li><strong>Support messages</strong> — retained for up to 24 months so we can follow up on recurring issues.</li> <li><strong>Purchase records</strong> — retained as long as tax and accounting rules require.</li> </ul> </section> <section id="your-rights"> <h2>Your rights</h2> <p>Depending on where you live, you have the right to:</p> <ul> <li><strong>Access</strong> a copy of the personal data we hold about you.</li> <li><strong>Correct</strong> data that is wrong or out of date — most of it is editable directly in the app.</li> <li><strong>Delete</strong> your account and data. See <a href="/en/delete-account/">Delete your account</a>.</li> <li><strong>Export</strong> your training data in a portable format.</li> <li><strong>Object to or restrict</strong> processing based on our legitimate interests.</li> <li><strong>Withdraw consent</strong> for health access, notifications, camera or photos at any time in your device settings.</li> <li><strong>Complain</strong> to your local data protection authority.</li> </ul> <p>
+If you are a California resident, note that we do not sell or share personal information as those terms
+      are defined by the CCPA/CPRA, and we will not discriminate against you for exercising your rights.
+</p> <p>
+To exercise any right, email <a href="mailto:wlog.training@gmail.com">wlog.training@gmail.com</a>. We
+      respond within 30 days.
+</p> </section> <section id="deletion"> <h2>Deleting your data</h2> <p>
+You can delete your account and all associated cloud data from inside the app, without emailing anyone:
+      open <strong>Settings</strong> and scroll to <strong>Delete account</strong> at the bottom. This is
+      irreversible.
+</p> <p>
+Full step-by-step instructions, and what is removed versus retained, are on the
+<a href="/en/delete-account/">Delete your account</a> page.
+</p> </section> <section id="children"> <h2>Children's privacy</h2> <p>
+WLog is not directed at children under 13 (or the minimum age in your country, where that is higher), and
+      we do not knowingly collect personal data from them. If you believe a child has provided us with personal
+      data, contact <a href="mailto:wlog.training@gmail.com">wlog.training@gmail.com</a> and we will delete it.
+</p> <p>
+Resistance training carries injury risk for developing bodies. Minors should train under qualified
+      supervision.
+</p> </section> <section id="security"> <h2>Security</h2> <p>
+Data in transit is encrypted with TLS. Cloud data is stored on Google Cloud infrastructure with access
+      rules that restrict each account's records to that account. Authentication tokens are held in the
+      platform keychain or keystore, and the app uses attestation to reject requests from tampered clients.
+</p> <p>
+No system is perfectly secure. If you discover a vulnerability, please report it privately to
+<a href="mailto:wlog.training@gmail.com">wlog.training@gmail.com</a> before disclosing it publicly.
+</p> </section> <section id="transfers"> <h2>International transfers</h2> <p>
+Our providers operate globally, so your data may be processed outside your country, including in the
+      United States. Where data leaves the EEA or UK, transfers rely on the European Commission's Standard
+      Contractual Clauses or an equivalent approved safeguard offered by the provider.
+</p> </section> <section id="changes"> <h2>Changes to this policy</h2> <p>
+We update this policy when the app changes. The revision date at the top always reflects the current
+      version. For material changes that affect how we use your data, we will notify you in the app or by email
+      before the change takes effect.
+</p> </section> <section id="contact"> <h2>Contact</h2> <p>
+Questions, requests or complaints about privacy:
+<a href="mailto:wlog.training@gmail.com">wlog.training@gmail.com</a>.
+</p> <p>
+For help using the app, see <a href="/en/support/">Support</a>. For the rules of using WLog, see the
+<a href="/en/terms/">Terms of Service</a>.
+</p> </section>  </div> </div> </div> </article>   </main> <footer class="site-footer"> <div class="container"> <div class="footer-grid"> <!-- Brand column --> <div class="footer-brand"> <a href="/en/" class="logo" style="font-size: 1.125rem;"> <img src="/app-icon.png" alt="WLog" width="28" height="28">
+WLog
+</a> <p class="footer-tagline">Free Workout Tracker</p> </div> <!-- Product column --> <div class="footer-col"> <h4>Product</h4> <ul> <li><a href="/en/#features">Features</a></li> <li><a href="/en/#faq">FAQ</a></li> <li><a href="/en/#download">Download Now</a></li> </ul> </div> <!-- Legal column — English-only pages, linked from every locale --> <div class="footer-col"> <h4>Legal</h4> <ul> <li><a href="/en/privacy/">Privacy Policy</a></li> <li><a href="/en/terms/">Terms of Service</a></li> </ul> </div> <!-- Support column --> <div class="footer-col"> <h4>Support</h4> <ul> <li><a href="/en/support/">Help Center</a></li> <li><a href="/en/delete-account/">Delete Account</a></li> <li><a href="mailto:wlog.training@gmail.com">wlog.training@gmail.com</a></li> <!-- PLACEHOLDER: Add social media links --> <!--
+          <li><a href="https://instagram.com/wlog" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://twitter.com/wlog" target="_blank" rel="noopener">X (Twitter)</a></li>
+          --> </ul> </div> </div> <div class="footer-bottom"> <p>&copy; 2026 WLog. All rights reserved.</p> </div> </div> </footer> </body></html> <script>
+  // Label every data cell with its column header so tables can stack into
+  // cards on phones (see `.legal-table td[data-label]::before`).
+  document.querySelectorAll('.legal-table').forEach(function (table) {
+    var headers = Array.prototype.map.call(
+      table.querySelectorAll('thead th'),
+      function (th) { return th.textContent.trim(); }
+    );
+    table.querySelectorAll('tbody tr').forEach(function (row) {
+      Array.prototype.forEach.call(row.cells, function (cell, index) {
+        if (cell.tagName === 'TD' && headers[index]) cell.setAttribute('data-label', headers[index]);
+      });
+    });
+  });
+</script>

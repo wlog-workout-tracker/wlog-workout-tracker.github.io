@@ -1,0 +1,251 @@
+<!DOCTYPE html><html lang="en" data-theme="light"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Terms of Service — WLog Workout Tracker</title><meta name="description" content="The terms that govern your use of the WLog workout tracker app, including the health and safety disclaimer, subscription billing, refunds and acceptable use."><link rel="canonical" href="https://wlog-workout-tracker.github.io/en/terms/"><link rel="icon" type="image/png" href="/app-icon.png"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:title" content="Terms of Service — WLog Workout Tracker"><meta property="og:description" content="The terms that govern your use of the WLog workout tracker app, including the health and safety disclaimer, subscription billing, refunds and acceptable use."><meta property="og:image" content="https://wlog-workout-tracker.github.io/og-image.png"><meta property="og:url" content="https://wlog-workout-tracker.github.io/en/terms/"><meta property="og:locale" content="en_US"><meta name="twitter:card" content="summary_large_image"><!-- Hreflang: all locales + x-default --><!-- Theme: prevent flash --><script>
+      (function() {
+        // `?theme=` lets the app's in-app WebView force its own theme: WKWebView
+        // reports the OS appearance, not the app's dark-mode setting, so without
+        // this a dark app opens a light page. Persisted so in-page navigation keeps it.
+        var forced = new URLSearchParams(window.location.search).get('theme');
+        if (forced !== 'dark' && forced !== 'light') forced = null;
+        if (forced) { try { localStorage.setItem('theme', forced); } catch (e) {} }
+        var t = forced || localStorage.getItem('theme');
+        if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script><!-- JSON-LD slot --><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Terms of Service — WLog Workout Tracker","description":"The terms that govern your use of the WLog workout tracker app, including the health and safety disclaimer, subscription billing, refunds and acceptable use.","url":"https://wlog-workout-tracker.github.io/en/terms/","dateModified":"2026-08-02","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"WLog","url":"https://wlog-workout-tracker.github.io/en/"},"publisher":{"@type":"Organization","name":"WLog","email":"wlog.training@gmail.com","url":"https://wlog-workout-tracker.github.io/en/"}}</script><link rel="stylesheet" href="/_astro/delete-account.DPSXs_BL.css"></head> <body> <header class="site-header" id="site-header"> <div class="container"> <a href="/en/" class="logo"> <img src="/app-icon.png" alt="WLog" width="32" height="32"> <span class="logo__text">WLog</span> </a> <nav id="site-nav" class="site-nav"> <a href="/en/#features" class="nav-link">Features</a> <a href="/en/#faq" class="nav-link">FAQ</a> <a href="/en/#download" class="nav-link nav-link--cta">Download Now</a> <select class="lang-select" aria-label="Language"> <option value="en" selected>English</option><option value="en-au">English (AU)</option><option value="en-ca">English (CA)</option><option value="en-gb">English (GB)</option><option value="da">Dansk</option><option value="de">Deutsch</option><option value="es">Espanol</option><option value="es-mx">Espanol (MX)</option><option value="fr">Francais</option><option value="fr-ca">Francais (CA)</option><option value="hi">Hindi</option><option value="it">Italiano</option><option value="ja">Japanese</option><option value="ko">Korean</option><option value="nl">Nederlands</option><option value="pl">Polski</option><option value="pt-br">Portugues (BR)</option><option value="pt">Portugues</option><option value="ru">Russian</option><option value="tr">Turkce</option><option value="zh">Chinese</option> </select> </nav> <div class="header-actions"> <button class="theme-toggle" aria-label="Toggle theme" type="button" id="theme-toggle"> <span class="theme-icon-light">&#9790;</span> <span class="theme-icon-dark" style="display:none">&#9728;&#65039;</span> </button> <button class="nav-toggle" type="button" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"> <span class="nav-toggle__bars" aria-hidden="true"></span> </button> </div> </div> </header> <script>
+  // Sticky header background on scroll
+  var header = document.getElementById('site-header');
+  function onScroll() {
+    if (window.scrollY > 20) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Mobile nav toggle
+  var navToggle = document.getElementById('nav-toggle');
+  function setNavOpen(open) {
+    header.classList.toggle('nav-open', open);
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  navToggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    setNavOpen(!header.classList.contains('nav-open'));
+  });
+  document.getElementById('site-nav').addEventListener('click', function(e) {
+    if (e.target.closest('a')) setNavOpen(false);
+  });
+  document.addEventListener('click', function(e) {
+    if (header.classList.contains('nav-open') && !header.contains(e.target)) setNavOpen(false);
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') setNavOpen(false);
+  });
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 767) setNavOpen(false);
+  });
+
+  // Language switcher
+  document.querySelector('.lang-select').addEventListener('change', function(e) {
+    window.location.href = '/' + e.target.value + '/';
+  });
+
+  // Theme toggle
+  document.getElementById('theme-toggle').addEventListener('click', function() {
+    var html = document.documentElement;
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    var next = isDark ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    updateThemeIcons(next);
+  });
+
+  function updateThemeIcons(theme) {
+    var light = document.querySelector('.theme-icon-light');
+    var dark = document.querySelector('.theme-icon-dark');
+    if (light) light.style.display = theme === 'dark' ? 'none' : '';
+    if (dark) dark.style.display = theme === 'dark' ? '' : 'none';
+  }
+  updateThemeIcons(document.documentElement.getAttribute('data-theme') || 'light');
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Scroll-reveal animations
+  document.addEventListener('DOMContentLoaded', function() {
+    var reveals = document.querySelectorAll('.reveal');
+    if (reveals.length > 0 && 'IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(function(el) { obs.observe(el); });
+    }
+  });
+</script> <main>    <article class="legal"> <div class="container legal__container"> <header class="legal__header"> <span class="section-label">Legal</span> <h1>Terms of Service</h1> <p class="legal__lede">These terms are the agreement between you and WLog. They cover training safety, subscriptions, and what each of us is responsible for.</p> <p class="legal__updated">
+Last updated <time datetime="2026-08-02">August 2, 2026</time> </p> </header> <div class="legal__body"> <nav class="legal__toc" aria-label="On this page"> <h2 class="legal__toc-title">On this page</h2> <ol> <li><a href="#acceptance">Acceptance</a></li><li><a href="#health-disclaimer">Health disclaimer</a></li><li><a href="#licence">Licence to use WLog</a></li><li><a href="#accounts">Your account</a></li><li><a href="#subscriptions">Subscriptions &amp; billing</a></li><li><a href="#refunds">Refunds</a></li><li><a href="#acceptable-use">Acceptable use</a></li><li><a href="#user-content">Your content</a></li><li><a href="#ai-features">AI features</a></li><li><a href="#availability">Availability &amp; changes</a></li><li><a href="#termination">Termination</a></li><li><a href="#warranty">Disclaimer of warranties</a></li><li><a href="#liability">Limitation of liability</a></li><li><a href="#governing-law">Governing law</a></li><li><a href="#contact">Contact</a></li> </ol> </nav> <div class="legal__content">  <section id="acceptance"> <h2>Acceptance of these terms</h2> <p>
+By downloading, installing or using the WLog mobile app, the Apple Watch companion app or this website
+      (together, the "Service"), you agree to these Terms of Service. If you do not agree, do not use the
+      Service.
+</p> <p>
+The Service is provided by Mustafa Ali Dikçinar, an independent developer ("WLog", "we", "us"). Your use
+      of the Service is also governed by our <a href="/en/privacy/">Privacy Policy</a>.
+</p> <p>
+You must be at least 13 years old, or the minimum age of digital consent in your country if that is
+      higher, to use the Service.
+</p> </section> <section id="health-disclaimer"> <h2>Health and safety disclaimer</h2> <div class="legal-callout legal-callout--warn"> <span class="legal-callout__icon" aria-hidden="true"> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg> </span> <p> <strong>WLog is not a medical device and does not provide medical advice.</strong> It is a logging and
+        tracking tool for informational and fitness purposes only.
+</p> </div> <p>You acknowledge and agree that:</p> <ul> <li>
+Nothing in the Service — including routines, suggested weight increases, estimated one-rep maxes,
+        strength levels or imported programs — is medical advice, diagnosis or treatment.
+</li> <li>
+You should consult a physician before starting any exercise program, especially if you are pregnant,
+        recovering from injury or illness, or have a cardiovascular, musculoskeletal or metabolic condition.
+</li> <li>
+Resistance training carries an inherent risk of serious injury. You are solely responsible for your
+        form, your equipment, your loading decisions and your training environment.
+</li> <li>
+Automatic progressive overload suggests weight increases based on the numbers you log. It cannot see
+        your fatigue, technique or readiness. <strong>Always use your own judgement and stop if something hurts.</strong> </li> <li>
+Data exchanged with Apple Health or Health Connect is an estimate and must not be relied on for medical
+        purposes.
+</li> </ul> <p>
+If you experience chest pain, dizziness, faintness or unusual shortness of breath during exercise, stop
+      immediately and seek medical attention.
+</p> </section> <section id="licence"> <h2>Licence to use WLog</h2> <p>
+We grant you a personal, limited, non-exclusive, non-transferable, revocable licence to use the Service
+      on devices you own or control, for your own non-commercial training.
+</p> <p>You may not:</p> <ul> <li>Copy, modify, translate or create derivative works of the app.</li> <li>Reverse engineer, decompile or disassemble it, except where that right cannot be excluded by law.</li> <li>Rent, lease, sell, sublicense or redistribute the app or your account.</li> <li>Remove or obscure any copyright, trademark or other proprietary notice.</li> <li>Scrape, bulk-extract or resell the exercise library, videos or other content.</li> </ul> <p>
+The Service, its source code, design, exercise library, illustrations, videos and the WLog name and logo
+      remain our property or that of our licensors, and are protected by copyright and trademark law.
+</p> </section> <section id="accounts"> <h2>Your account</h2> <p>
+You can use WLog without an account. Creating one — with Sign in with Apple, Google Sign-In, or as a guest
+      — enables cloud backup and cross-device sync.
+</p> <ul> <li>You are responsible for keeping access to your account credentials secure.</li> <li>You are responsible for all activity that occurs under your account.</li> <li>Provide accurate information and keep it current.</li> <li>Tell us promptly at <a href="mailto:wlog.training@gmail.com">wlog.training@gmail.com</a> if you believe your account has been compromised.</li> </ul> <p>
+Guest accounts are tied to a single device installation. If you uninstall the app or reset your device
+      without upgrading to a signed-in account, that data may be unrecoverable. We recommend signing in if your
+      training history matters to you.
+</p> </section> <section id="subscriptions"> <h2>Subscriptions and billing</h2> <p>
+WLog is free to use. Some features require a paid subscription ("WLog Premium"). Subscriptions are sold
+      and billed by <strong>Apple</strong> through the App Store or by <strong>Google</strong> through Google
+      Play — not by us directly.
+</p> <ul> <li> <strong>Prices and terms</strong> are shown in the app before you confirm. They vary by country and may
+        change; any change applies from your next renewal period.
+</li> <li> <strong>Free trials</strong>, where offered, convert automatically to a paid subscription at the end of
+        the trial unless you cancel at least 24 hours before it ends.
+</li> <li> <strong>Auto-renewal.</strong> Subscriptions renew automatically for the same period unless cancelled at
+        least 24 hours before the current period ends. Your store account is charged within 24 hours before the
+        renewal date.
+</li> <li> <strong>Cancelling</strong> is done in your store account settings — App Store subscriptions on iOS,
+        Google Play subscriptions on Android. Deleting the app does not cancel a subscription.
+</li> <li> <strong>After cancellation</strong> you keep premium access until the end of the paid period. Your
+        training data remains intact; premium-only features become read-only or unavailable.
+</li> <li> <strong>Restoring purchases</strong> is available in the app for the same store account that made the
+        original purchase.
+</li> </ul> <p>
+We never receive or store your payment card details. Billing disputes are handled by the store that
+      processed the payment.
+</p> </section> <section id="refunds"> <h2>Refunds</h2> <p>
+Because Apple and Google process all payments, refunds are handled under their policies, not ours:
+</p> <ul> <li> <strong>App Store:</strong> request a refund at
+<a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer">reportaproblem.apple.com</a>.
+</li> <li> <strong>Google Play:</strong> request a refund at
+<a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener noreferrer">your Google Play subscriptions page</a>.
+</li> </ul> <p>
+Statutory withdrawal and consumer rights in your country apply regardless of the above. If you are in the
+      EU or UK and believe you are entitled to a refund that the store declined, contact us and we will help
+      where we can.
+</p> </section> <section id="acceptable-use"> <h2>Acceptable use</h2> <p>You agree not to:</p> <ul> <li>Use the Service for any unlawful purpose or in breach of any applicable regulation.</li> <li>Attempt to gain unauthorised access to accounts, servers or systems connected to the Service.</li> <li>Interfere with or disrupt the Service, including by automated querying, flooding or denial-of-service.</li> <li>Circumvent, disable or tamper with subscription entitlements, app attestation or other security features.</li> <li>Upload content that is unlawful, infringing, or that you do not have the right to submit.</li> <li>Use the Service to build a competing product or to train machine learning models on our content.</li> </ul> </section> <section id="user-content"> <h2>Your content</h2> <p>
+Your workouts, routines, notes, measurements and imported plans remain <strong>yours</strong>. We claim no
+      ownership over them.
+</p> <p>
+You grant us a limited licence to store, transmit, back up and display that content solely to operate the
+      Service for you — for example to sync it to your Apple Watch or restore it on a new phone. This licence
+      ends when you delete the content or your account.
+</p> <p>
+You are responsible for having the right to upload anything you import, including training plans authored
+      by someone else.
+</p> </section> <section id="ai-features"> <h2>AI features</h2> <p>
+WLog can generate a structured routine from a photo, PDF or spreadsheet you provide. These features rely
+      on automated extraction, which can misread values.
+</p> <ul> <li>Always review an imported routine — especially weights and rep ranges — before training with it.</li> <li>We do not warrant that generated output is accurate, complete or appropriate for you.</li> <li>Do not submit files containing other people's personal data or confidential material.</li> <li>AI features may be rate-limited, changed or withdrawn.</li> </ul> </section> <section id="availability"> <h2>Availability and changes</h2> <p>
+We aim to keep WLog available and working, but we do not guarantee uninterrupted service. We may modify,
+      suspend or discontinue features at any time. Where a change materially reduces functionality you have paid
+      for, we will give reasonable notice.
+</p> <p>
+We may update these terms. The revision date at the top reflects the current version. Material changes
+      will be notified in the app or by email before taking effect; continuing to use the Service afterwards
+      means you accept the updated terms.
+</p> </section> <section id="termination"> <h2>Termination</h2> <p>
+You may stop using the Service at any time and delete your account from <strong>Settings</strong> →
+<strong>Delete account</strong>, as described on the
+<a href="/en/delete-account/">Delete your account</a> page.
+</p> <p>
+We may suspend or terminate your access if you materially breach these terms, if required by law, or to
+      protect the Service or other users. Where reasonable and lawful, we will warn you first and give you an
+      opportunity to export your data.
+</p> </section> <section id="warranty"> <h2>Disclaimer of warranties</h2> <p>
+To the maximum extent permitted by law, the Service is provided <strong>"as is" and "as available"</strong>,
+      without warranties of any kind, whether express, implied or statutory, including implied warranties of
+      merchantability, fitness for a particular purpose, accuracy and non-infringement.
+</p> <p>
+We do not warrant that the Service will meet your requirements, that it will be error-free or
+      uninterrupted, or that any data will be permanently preserved. Keep your own backups of anything you
+      cannot afford to lose.
+</p> </section> <section id="liability"> <h2>Limitation of liability</h2> <p>
+To the maximum extent permitted by law, we are not liable for any indirect, incidental, special,
+      consequential or punitive damages, or for lost profits, lost data, or personal injury arising out of or
+      related to your use of the Service.
+</p> <p>
+Our total aggregate liability for all claims relating to the Service is limited to the greater of the
+      amount you paid us in the twelve months before the claim arose, or USD 50.
+</p> <p>
+Nothing in these terms excludes or limits liability that cannot lawfully be excluded, including liability
+      for death or personal injury caused by negligence, for fraud, or any statutory consumer rights you have in
+      your country.
+</p> </section> <section id="governing-law"> <h2>Governing law</h2> <p>
+These terms are governed by the laws of the Republic of Türkiye, without regard to conflict-of-law rules.
+      The courts of Türkiye have jurisdiction over disputes arising from them.
+</p> <p>
+If you are a consumer resident in the European Union, the United Kingdom or another jurisdiction with
+      mandatory consumer protection rules, you retain the protection of the mandatory provisions of your local
+      law and may bring proceedings in your local courts.
+</p> <p>
+If any provision of these terms is found unenforceable, the remaining provisions stay in full effect.
+</p> </section> <section id="contact"> <h2>Contact</h2> <p>
+Questions about these terms:
+<a href="mailto:wlog.training@gmail.com">wlog.training@gmail.com</a>.
+</p> <p>
+See also our <a href="/en/privacy/">Privacy Policy</a> and
+<a href="/en/support/">Support</a> pages.
+</p> </section>  </div> </div> </div> </article>   </main> <footer class="site-footer"> <div class="container"> <div class="footer-grid"> <!-- Brand column --> <div class="footer-brand"> <a href="/en/" class="logo" style="font-size: 1.125rem;"> <img src="/app-icon.png" alt="WLog" width="28" height="28">
+WLog
+</a> <p class="footer-tagline">Free Workout Tracker</p> </div> <!-- Product column --> <div class="footer-col"> <h4>Product</h4> <ul> <li><a href="/en/#features">Features</a></li> <li><a href="/en/#faq">FAQ</a></li> <li><a href="/en/#download">Download Now</a></li> </ul> </div> <!-- Legal column — English-only pages, linked from every locale --> <div class="footer-col"> <h4>Legal</h4> <ul> <li><a href="/en/privacy/">Privacy Policy</a></li> <li><a href="/en/terms/">Terms of Service</a></li> </ul> </div> <!-- Support column --> <div class="footer-col"> <h4>Support</h4> <ul> <li><a href="/en/support/">Help Center</a></li> <li><a href="/en/delete-account/">Delete Account</a></li> <li><a href="mailto:wlog.training@gmail.com">wlog.training@gmail.com</a></li> <!-- PLACEHOLDER: Add social media links --> <!--
+          <li><a href="https://instagram.com/wlog" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://twitter.com/wlog" target="_blank" rel="noopener">X (Twitter)</a></li>
+          --> </ul> </div> </div> <div class="footer-bottom"> <p>&copy; 2026 WLog. All rights reserved.</p> </div> </div> </footer> </body></html> <script>
+  // Label every data cell with its column header so tables can stack into
+  // cards on phones (see `.legal-table td[data-label]::before`).
+  document.querySelectorAll('.legal-table').forEach(function (table) {
+    var headers = Array.prototype.map.call(
+      table.querySelectorAll('thead th'),
+      function (th) { return th.textContent.trim(); }
+    );
+    table.querySelectorAll('tbody tr').forEach(function (row) {
+      Array.prototype.forEach.call(row.cells, function (cell, index) {
+        if (cell.tagName === 'TD' && headers[index]) cell.setAttribute('data-label', headers[index]);
+      });
+    });
+  });
+</script>
