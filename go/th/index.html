@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex"><title>WLog — Workout Tracker &amp; Gym Log</title><meta name="description" content="WLog is a workout tracker and gym log for lifters. Available on iOS and Android."><meta property="og:type" content="website"><meta property="og:title" content="WLog — Workout Tracker &#38; Gym Log"><meta property="og:description" content="WLog is a workout tracker and gym log for lifters. Available on iOS and Android."><meta property="og:image" content="https://wlog-workout-tracker.github.io/og-image.png"><meta name="twitter:card" content="summary_large_image"><link rel="icon" type="image/png" href="/app-icon.png"><script>(function(){const iosUrl = "https://apps.apple.com/app/apple-store/id1567930312?pt=123047574&ct=th_bio&mt=8";
+const androidUrl = "https://play.google.com/store/apps/details?id=com.mdikcinar.workoutplanner&referrer=utm_source%3Dthreads%26utm_medium%3Dsocial%26utm_campaign%3Dth_bio";
+const token = "th_bio";
+
+      var content = new URLSearchParams(window.location.search).get('c');
+      var android = content && /^[A-Za-z0-9_-]{1,40}$/.test(content)
+        ? androidUrl + '%26utm_content%3D' + content
+        : androidUrl;
+      var ua = navigator.userAgent || '';
+      var target = /Android/i.test(ua)
+        ? android
+        : /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)
+          ? iosUrl
+          : null;
+      // Back from a store web page must land on the buttons, not bounce out again.
+      var seenKey = 'wlog-go:' + token;
+      var seen = false;
+      try {
+        seen = sessionStorage.getItem(seenKey) === '1';
+        sessionStorage.setItem(seenKey, '1');
+      } catch (e) {}
+      if (target && !seen) window.location.href = target;
+      document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('android-link').href = android;
+      });
+    })();</script><style>
+      :root { color-scheme: light dark; --accent: #09B64E; --fg: #0f1411; --muted: #5b665f; --bg: #ffffff; }
+      @media (prefers-color-scheme: dark) { :root { --fg: #f2f5f3; --muted: #a3ada7; --bg: #0c0f0d; } }
+      body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: var(--bg); color: var(--fg); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      main { text-align: center; padding: 2rem 1.5rem; }
+      img { border-radius: 22px; }
+      h1 { margin: 1rem 0 0.25rem; font-size: 1.75rem; }
+      p { margin: 0 0 1.75rem; color: var(--muted); }
+      .badges { display: flex; flex-direction: column; gap: 0.75rem; min-width: 240px; }
+      .badges a { display: block; padding: 0.9rem 1.25rem; border-radius: 12px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; }
+    </style></head> <body> <main> <img src="/app-icon.png" width="88" height="88" alt="WLog app icon"> <h1>WLog</h1> <p>Workout tracker and gym log</p> <div class="badges"> <a href="https://apps.apple.com/app/apple-store/id1567930312?pt=123047574&ct=th_bio&mt=8">Download on the App Store</a> <a id="android-link" href="https://play.google.com/store/apps/details?id=com.mdikcinar.workoutplanner&referrer=utm_source%3Dthreads%26utm_medium%3Dsocial%26utm_campaign%3Dth_bio">Get it on Google Play</a> </div> </main> </body></html>
