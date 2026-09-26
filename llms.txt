@@ -1,0 +1,3 @@
+# WLog has moved
+
+The WLog website is now at https://wlogapp.com/ — see https://wlogapp.com/llms.txt
